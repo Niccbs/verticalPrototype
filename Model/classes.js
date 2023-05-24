@@ -2,11 +2,15 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./Model/db.sqlite');
 
 
+
 class Page {
-  constructor(title, type, content) {
+  constructor(title, type, content, created, created_by, last_edited) {
     this.title = title;
     this.type = type;
     this.content = content;
+    this.created = created;
+    this.created_by = created_by;
+    this.last_edited = last_edited
   }
   //Create page
   create(page) {
